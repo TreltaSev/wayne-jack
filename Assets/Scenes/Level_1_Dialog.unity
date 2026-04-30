@@ -1861,7 +1861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextLink
   content: 
-  mode: 0
+  mode: 1
   e_content_change:
     m_PersistentCalls:
       m_Calls: []
