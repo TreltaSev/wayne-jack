@@ -46,6 +46,17 @@ public class TextLink : MonoBehaviour
     }
 
     /// <summary>
+    /// Attempts to update the content value programmatically,
+    /// only if this instance is of mode `Transmitter`
+    /// </summary>
+    /// <param name="new_content"></param>
+    public void TrySetTransmitterContent(string new_content)
+    {
+        if (mode != Mode.Transmitter) return;
+        SetContent(new_content);
+    }
+
+    /// <summary>
     /// Gets the textComponent reference if there isn't one already
     /// </summary>
     private void Cache()
