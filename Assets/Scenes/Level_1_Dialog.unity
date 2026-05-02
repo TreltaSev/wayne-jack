@@ -223,6 +223,127 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &128025317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 128025318}
+  - component: {fileID: 128025319}
+  m_Layer: 0
+  m_Name: 2:Epilogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &128025318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128025317}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1729679740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &128025319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128025317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8db17fac7e949138ba72d54205aa554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueItem
+  talker: Narrator
+  description: Epilogue
+  content: This Mysterious Rich Figure enters the daycare trying to scout gambling
+    connoisseurs for whatever reason.
+  default_next: 1
+  onNext:
+    m_PersistentCalls:
+      m_Calls: []
+  onShow:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &317167740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 317167741}
+  - component: {fileID: 317167742}
+  m_Layer: 0
+  m_Name: 4:Intro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &317167741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317167740}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1729679740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &317167742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317167740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8db17fac7e949138ba72d54205aa554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueItem
+  talker: Rich Stranger
+  description: Intro
+  content: Ever heard of black-jack kid?
+  default_next: 1
+  onNext:
+    m_PersistentCalls:
+      m_Calls: []
+  onShow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1199906808}
+        m_TargetAssemblyTypeName: Dialogue.ChoiceGroup, Assembly-CSharp
+        m_MethodName: Display
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &825027710
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +355,7 @@ GameObject:
   - component: {fileID: 825027711}
   - component: {fileID: 825027712}
   m_Layer: 0
-  m_Name: 1:Intro
+  m_Name: 1:Epilogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,10 +388,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8db17fac7e949138ba72d54205aa554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueItem
-  talker: Richy Rich
-  description: Dialogue Description
-  content: This is a Test
---- !u!1 &898212759
+  talker: Narrator
+  description: Epilogue
+  content: "You, a 5 year old child named Wayne Jack and you\u2019re stuck in day
+    care, you\u2019re an orphan at the daycare. You sometimes \u201Cgamble\u201D
+    with other kids at the day care. It's the only thing you find fun."
+  default_next: 1
+  onNext:
+    m_PersistentCalls:
+      m_Calls: []
+  onShow:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &959722692
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,45 +408,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 898212760}
-  - component: {fileID: 898212761}
+  - component: {fileID: 959722693}
+  - component: {fileID: 959722694}
   m_Layer: 0
-  m_Name: 2:Intro
+  m_Name: 1:Intro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &898212760
+--- !u!4 &959722693
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898212759}
+  m_GameObject: {fileID: 959722692}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1729679740}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &898212761
+--- !u!114 &959722694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898212759}
+  m_GameObject: {fileID: 959722692}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8db17fac7e949138ba72d54205aa554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueItem
-  talker: Richy Rich
-  description: Dialogue Description
-  content: My name is Richy Rich
+  talker: Rich Stranger
+  description: Intro
+  content: Hey kid, are you a gambling man?
+  default_next: 1
+  onNext:
+    m_PersistentCalls:
+      m_Calls: []
+  onShow:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &983798440
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +533,60 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1021247913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1021247914}
+  - component: {fileID: 1021247915}
+  m_Layer: 0
+  m_Name: 3:Intro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1021247914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021247913}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1729679740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1021247915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021247913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8db17fac7e949138ba72d54205aa554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueItem
+  talker: You
+  description: Intro
+  content: Yes, yes I am.
+  default_next: 1
+  onNext:
+    m_PersistentCalls:
+      m_Calls: []
+  onShow:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1068517310
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +619,7 @@ RectTransform:
   m_LocalScale: {x: 1.0000798, y: 1.0000798, z: 1.00008}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1757416609}
+  - {fileID: 1786592194}
   m_Father: {fileID: 1762115391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5.46}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -514,6 +705,289 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068517310}
   m_CullTransparentMesh: 1
+--- !u!1 &1089417637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1089417638}
+  - component: {fileID: 1089417639}
+  m_Layer: 0
+  m_Name: 3:Choice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1089417638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089417637}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1199906807}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1089417639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089417637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa47c9059a3b4199a2d2b000b9d01a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue.Choice
+  title: Nope, why are you talking to me?
+  subtext: (close game)
+  onSelect:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &1136066931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1136066932}
+  - component: {fileID: 1136066933}
+  m_Layer: 0
+  m_Name: 3:Epilogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1136066932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136066931}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1729679740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1136066933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136066931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8db17fac7e949138ba72d54205aa554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueItem
+  talker: Narrator
+  description: Epilogue
+  content: The Mysterious Rich Figure spots you in the back of the daycare, playing
+    a game of rock paper scissors with another child older than you and winning.
+    He walks up to you.
+  default_next: 1
+  onNext:
+    m_PersistentCalls:
+      m_Calls: []
+  onShow:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &1185389530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1185389531}
+  - component: {fileID: 1185389533}
+  - component: {fileID: 1185389532}
+  m_Layer: 5
+  m_Name: NextButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1185389531
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185389530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1762115391}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -100, y: 100}
+  m_SizeDelta: {x: 60, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1185389532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185389530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 5799688169519576398, guid: f73c53f476afcdd84b185ed4a20bba24, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1185389533
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185389530}
+  m_CullTransparentMesh: 1
+--- !u!1 &1199906806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1199906807}
+  - component: {fileID: 1199906808}
+  m_Layer: 0
+  m_Name: 4:Intro - Choices
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1199906807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199906806}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1513505554}
+  - {fileID: 1519392305}
+  - {fileID: 1089417638}
+  m_Father: {fileID: 1729679740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1199906808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199906806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d377f24b93dc0482bb17c03d44bafbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue.ChoiceGroup
+  choices: []
+--- !u!1 &1226220110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1226220111}
+  - component: {fileID: 1226220112}
+  m_Layer: 0
+  m_Name: 2:Intro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1226220111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226220110}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1729679740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1226220112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226220110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8db17fac7e949138ba72d54205aa554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueItem
+  talker: Narrator
+  description: Intro
+  content: You look up to him, confused, wondering why this strange man is asking
+    such a strange question, but something inside you, without even thinking answers.
+  default_next: 1
+  onNext:
+    m_PersistentCalls:
+      m_Calls: []
+  onShow:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1246249379
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,6 +1312,104 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1513505553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1513505554}
+  - component: {fileID: 1513505555}
+  m_Layer: 0
+  m_Name: 1:Choice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1513505554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513505553}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1199906807}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1513505555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513505553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa47c9059a3b4199a2d2b000b9d01a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue.Choice
+  title: I have, but I don't know how to play it...
+  subtext: (continue)
+  onSelect:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &1519392304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1519392305}
+  - component: {fileID: 1519392306}
+  m_Layer: 0
+  m_Name: 2:Choice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1519392305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519392304}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1199906807}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1519392306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519392304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa47c9059a3b4199a2d2b000b9d01a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue.Choice
+  title: Nope, what is it strange man?
+  subtext: (continue)
+  onSelect:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1729679738
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,6 +1439,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d9d28df787c107f90052f9cdb59528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  nameplate_object: {fileID: 1786592197}
+  content_object: {fileID: 1740954811}
+  dialogueItems: []
+  currentDialogueItemIndex: 0
 --- !u!4 &1729679740
 Transform:
   m_ObjectHideFlags: 0
@@ -881,7 +1457,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 825027711}
-  - {fileID: 898212760}
+  - {fileID: 128025318}
+  - {fileID: 1136066932}
+  - {fileID: 959722693}
+  - {fileID: 1226220111}
+  - {fileID: 1021247914}
+  - {fileID: 317167741}
+  - {fileID: 1199906807}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1740954810 stripped
@@ -889,7 +1471,57 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7915991974804208178, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
   m_PrefabInstance: {fileID: 2651472117124325921}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1757416608
+--- !u!114 &1740954811 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2161208481518603384, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
+  m_PrefabInstance: {fileID: 2651472117124325921}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d40c34c1c7c9b5687c083c8f4462cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextLink
+--- !u!1 &1762115390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1762115391}
+  m_Layer: 5
+  m_Name: DialogueUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1762115391
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762115390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1915021665}
+  - {fileID: 1068517311}
+  - {fileID: 1246249380}
+  - {fileID: 1185389531}
+  m_Father: {fileID: 64324185}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.4}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1786592193
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -903,11 +1535,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3932461957686188451, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       propertyPath: content
-      value: Some Dialogue Example
+      value: Richy Rich
       objectReference: {fileID: 0}
     - target: {fileID: 4576590624031606992, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       propertyPath: m_text
-      value: Some Dialogue Example
+      value: Richy Rich
       objectReference: {fileID: 0}
     - target: {fileID: 4576590624031606992, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       propertyPath: m_fontAsset
@@ -954,18 +1586,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7915991974804208178, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7915991974804208178, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7915991974804208178, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7915991974804208178, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -975,7 +1595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7915991974804208178, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -9719.223
       objectReference: {fileID: 0}
     - target: {fileID: 7915991974804208178, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -983,15 +1603,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7915991974804208178, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7915991974804208178, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7915991974804208178, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7915991974804208178, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1031,7 +1651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8351188200885421184, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       propertyPath: m_Name
-      value: NameText
+      value: NameplateText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1039,25 +1659,25 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8351188200885421184, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1757416611}
+      addedObject: {fileID: 1786592196}
   m_SourcePrefab: {fileID: 100100000, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
---- !u!224 &1757416609 stripped
+--- !u!224 &1786592194 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7915991974804208178, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
-  m_PrefabInstance: {fileID: 1757416608}
+  m_PrefabInstance: {fileID: 1786592193}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1757416610 stripped
+--- !u!1 &1786592195 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8351188200885421184, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
-  m_PrefabInstance: {fileID: 1757416608}
+  m_PrefabInstance: {fileID: 1786592193}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1757416611
+--- !u!114 &1786592196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1757416610}
+  m_GameObject: {fileID: 1786592195}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
@@ -1065,44 +1685,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 2
   m_VerticalFit: 2
---- !u!1 &1762115390
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!114 &1786592197 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2161208481518603384, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
+  m_PrefabInstance: {fileID: 1786592193}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1762115391}
-  m_Layer: 5
-  m_Name: DialogueUI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1762115391
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762115390}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1915021665}
-  - {fileID: 1068517311}
-  - {fileID: 1246249380}
-  m_Father: {fileID: 64324185}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.4}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_GameObject: {fileID: 1786592195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d40c34c1c7c9b5687c083c8f4462cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextLink
 --- !u!1 &1877228746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,7 +1856,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2161208481518603384, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       propertyPath: content
-      value: Some Dialogue Example
+      value: Something or other...
       objectReference: {fileID: 0}
     - target: {fileID: 4576590624031606992, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       propertyPath: m_text
@@ -1379,7 +1972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8351188200885421184, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
       propertyPath: m_Name
-      value: NameText
+      value: ContentText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
