@@ -84,18 +84,13 @@ public class TextLink : MonoBehaviour
     /// </summary>
     private void SetupListener()
     {
-
-        Debug.Log("First");
-
         if (mode != Mode.Receiver || listenTo == null) return;
 
         if (currentlyListeningTo != null)
             currentlyListeningTo.e_content_change.RemoveListener(TransmitterListener);
-        Debug.Log("Fourth");
 
         currentlyListeningTo = listenTo;
 
-        Debug.Log("Added Listener");
         currentlyListeningTo.e_content_change.AddListener(TransmitterListener);
     }
 
@@ -117,7 +112,6 @@ public class TextLink : MonoBehaviour
 
     public void TransmitterListener(string new_content)
     {
-        Debug.Log($"Transmit {this} {new_content}");
         this.content = new_content;
         this.textComponent.text = this.content;
     }
