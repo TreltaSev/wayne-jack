@@ -105,6 +105,8 @@ public class GameManager : MonoBehaviour
         m_moveRightAction = InputActions.FindAction("Generic/MoveRight");
         m_moveDownAction = InputActions.FindAction("Generic/MoveDown");
         m_moveLeftAction = InputActions.FindAction("Generic/MoveLeft");
+        m_lightAction = InputActions.FindAction("Generic/Light");
+        m_heavyAction = InputActions.FindAction("Generic/Heavy");
     }
 
     // ? --- Select --- //
@@ -187,6 +189,38 @@ public class GameManager : MonoBehaviour
         if (state == State.Playing) onMoveLeftPlaying.Invoke();
     }
 
+    // ? --- Light --- //
+    private InputAction m_lightAction;
+    public UnityEvent onLight = new();
+    public UnityEvent onLightMenu = new();
+    public UnityEvent onLightDialogue = new();
+    public UnityEvent onLightPlaying = new();
+
+    private void HandleLight()
+    {
+        if (!m_lightAction.WasPressedThisFrame()) return;
+        onLight.Invoke();
+        if (state == State.Menu) onLightMenu.Invoke();
+        if (state == State.Dialogue) onLightDialogue.Invoke();
+        if (state == State.Playing) onLightPlaying.Invoke();
+    }
+
+    // ? --- Heavy --- //
+    private InputAction m_heavyAction;
+    public UnityEvent onHeavy = new();
+    public UnityEvent onHeavyMenu = new();
+    public UnityEvent onHeavyDialogue = new();
+    public UnityEvent onHeavyPlaying = new();
+
+    private void HandleHeavy()
+    {
+        if (!m_heavyAction.WasPressedThisFrame()) return;
+        onLight.Invoke();
+        if (state == State.Menu) onHeavyMenu.Invoke();
+        if (state == State.Dialogue) onHeavyDialogue.Invoke();
+        if (state == State.Playing) onHeavyPlaying.Invoke();
+    }
+
     private void Update()
     {
         HandleSelect();
@@ -194,31 +228,7 @@ public class GameManager : MonoBehaviour
         HandleMoveRight();
         HandleMoveDown();
         HandleMoveLeft();
+        HandleLight();
+        HandleHeavy();
     }
-
-    public void FooSelect()
-    {
-        Debug.Log("Testing...");
-    }
-
-    public void FooMoveUp()
-    {
-        Debug.Log("MoveUp...");
-    }
-
-    public void FooMoveRight()
-    {
-        Debug.Log("MoveRight...");
-    }
-
-    public void FooMoveDown()
-    {
-        Debug.Log("MoveDown...");
-    }
-
-    public void FooMoveLeft()
-    {
-        Debug.Log("MoveLeft...");
-    }
-
 }
