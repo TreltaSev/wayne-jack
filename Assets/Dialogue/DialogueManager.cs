@@ -68,7 +68,9 @@ namespace Dialogue
 
         public void SetDialogue(DialogueItem dialogueItem)
         {
-            attemptDialogueUpdate.Invoke(dialogueItem.relativeIndex);
+            currentDialogueItem = dialogueItem;
+            currentDialogueItemIndex = dialogueItem.relativeIndex;
+            UpdateDialogue();
         }
 
         void HandleDialogInteract()
@@ -90,9 +92,15 @@ namespace Dialogue
         /// <exception cref="System.IndexOutOfRangeException"></exception>
         private void AttemptDialogueUpdate(int new_index)
         {
+            if (currentDialogueItem && !currentDialogueItem.default_next)
+            {
+                currentDialogueItem.onNext.Invoke();
+                return;
+            }
+            ;
             if (new_index < 0 || new_index > (dialogueItems.Length + 1)) throw new System.IndexOutOfRangeException();
-            this.currentDialogueItemIndex = new_index;
             this.currentDialogueItem = dialogueItems[new_index];
+            this.currentDialogueItemIndex = new_index;
             this.successfulDialogueUpdate.Invoke();
         }
 
@@ -101,7 +109,14 @@ namespace Dialogue
         /// </summary>
         private void UpdateDialogue()
         {
-            if (currentDialogueItem) currentDialogueItem.onNext.Invoke();
+            if (currentDialogueItem)
+            {
+                if (currentDialogueItem.relativeIndex != currentDialogueItemIndex)
+                {
+                    currentDialogueItem.onNext.Invoke();                    
+                }
+            }
+            ;
             DialogueItem dialogueItem = dialogueItems[currentDialogueItemIndex];
             currentDialogueItem = dialogueItem;
             dialogueItem.onShow.Invoke();
