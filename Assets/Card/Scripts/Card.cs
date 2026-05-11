@@ -13,8 +13,6 @@ public enum Face
 
 public enum Glyph
 {
-    N0,
-    N1,
     N2,
     N3,
     N4,
@@ -37,9 +35,11 @@ public class Card : MonoBehaviour
     public Image glyphImage;
     public Image faceSmallImage;
     public Image faceBigImage;
+
+    public bool flipped;
     
     public Face face = Face.Club;
-    public Glyph glyph = Glyph.N1;
+    public Glyph glyph = Glyph.N2;
 
     public CardView cardView;
     void Awake()
@@ -60,11 +60,28 @@ public class Card : MonoBehaviour
     /// </summary>
     public void RefreshSelf()
     {
+        if (cardView == null || glyphImage == null || faceSmallImage == null || faceBigImage == null) return;
+
         string glyph_string = glyph.ToString().Replace("N", "").ToLower();
         string face_string = face.ToString().ToLower();
+
+        if (flipped)
+        {
+            glyphImage.sprite = null;
+            faceSmallImage.sprite = null;
+            faceBigImage.sprite = null;
+            return; 
+        }
+
         glyphImage.sprite = cardView.GetGlyph(glyph_string);
         faceSmallImage.sprite = cardView.GetFace(face_string);
         faceBigImage.sprite = cardView.GetFace(face_string);
+    }
+
+    public void Flip()
+    {
+        flipped = !flipped;
+        this.RefreshSelf();
     }
 
     /// <summary>
@@ -83,6 +100,7 @@ public class Card : MonoBehaviour
     /// <returns></returns>
     public int GetValue()
     {
+        if (flipped) return 0;
         string glyph_string = glyph.ToString().Replace("N", "").ToLower();
         if (int.TryParse(glyph_string, out int result)) return result;
         string[] unimportant_face_glyphs = { "j", "q", "k" };
@@ -99,5 +117,16 @@ public class Card : MonoBehaviour
     {
         string glyph_string = glyph.ToString().Replace("N", "").ToLower();
         return glyph_string == "a";
+    }
+
+    public static Card GenerateRandom()
+    {
+        GameObject cardObject = new GameObject("RandomCard");
+        Card card = cardObject.AddComponent<Card>();
+
+        card.face = (Face)Random.Range(0, System.Enum.GetValues(typeof(Face)).Length);
+        card.glyph = (Glyph)Random.Range(1, System.Enum.GetValues(typeof(Glyph)).Length);
+
+        return card;
     }
 }

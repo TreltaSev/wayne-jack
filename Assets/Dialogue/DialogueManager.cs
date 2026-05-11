@@ -188,7 +188,12 @@ namespace Dialogue
         {
             Debug.Log("Disabling Dialogue & Dialogue UI");
             dialogueUI.SetActive(false);
-            this.gameObject.SetActive(false);
+        }
+
+        public void Enable()
+        {
+            Debug.Log("ENabling Dialogue & Dialogue UI");
+            dialogueUI.SetActive(true);
         }
     }
 

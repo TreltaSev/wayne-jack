@@ -375,18 +375,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 916873043}
-        m_TargetAssemblyTypeName: Game.Dealer, Assembly-CSharp
-        m_MethodName: DealOpeningHand
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   onShow:
     m_PersistentCalls:
       m_Calls: []
@@ -894,43 +882,7 @@ MonoBehaviour:
       m_Calls: []
   OnRoundEnded:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 614657988}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-        m_MethodName: SetInteracting
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 358275771}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-        m_MethodName: SetInteracting
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 916873043}
-        m_TargetAssemblyTypeName: Game.Dealer, Assembly-CSharp
-        m_MethodName: DealOpeningHand
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnDealerOpeningDealt:
     m_PersistentCalls:
       m_Calls: []
@@ -6378,6 +6330,6 @@ SceneRoots:
   - {fileID: 1729679740}
   - {fileID: 1678612621}
   - {fileID: 302263492}
+  - {fileID: 851592038}
   - {fileID: 916873042}
   - {fileID: 714842115}
-  - {fileID: 851592038}

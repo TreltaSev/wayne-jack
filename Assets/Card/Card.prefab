@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5719017266598258106, guid: 20549fde058655640a106d1222df5357, type: 3}
+  m_Sprite: {fileID: -4721454476141129598, guid: 20549fde058655640a106d1222df5357, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 1034066077623453820}
   - component: {fileID: 6715351048091010775}
   - component: {fileID: 6249518729539835114}
+  - component: {fileID: 726741787791314909}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -311,6 +312,7 @@ MonoBehaviour:
   glyphImage: {fileID: 354525774734687583}
   faceSmallImage: {fileID: 1083105431821006598}
   faceBigImage: {fileID: 3847833909265488440}
+  flipped: 0
   face: 0
   glyph: 11
   cardView: {fileID: 3591243522887049085}
@@ -354,6 +356,48 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &726741787791314909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7025461646922918350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e39276fb8fa5efcb7dfebfc4119d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Hoverable
+  OnHoverEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3591243522887049085}
+        m_TargetAssemblyTypeName: CardView, Assembly-CSharp
+        m_MethodName: ScaleUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHoverLeave:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3591243522887049085}
+        m_TargetAssemblyTypeName: CardView, Assembly-CSharp
+        m_MethodName: ScaleDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8123959383045540909
 GameObject:
   m_ObjectHideFlags: 0

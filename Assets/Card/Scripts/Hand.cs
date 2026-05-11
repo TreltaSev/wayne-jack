@@ -2,8 +2,17 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(HandView))]
 public class Hand : MonoBehaviour
 {
+
+    // ! === Player ===
+    [SerializeField] private bool hookToPlayer = true;
+    private Player player;
+
+    // ! === Hand View ===
+    HandView handView;
+
     public int total = 0;
     public int alt_total = 0;
 
@@ -16,6 +25,16 @@ public class Hand : MonoBehaviour
 
     void Awake()
     {
+
+        // ? --- Player ---
+        if (hookToPlayer)
+        {
+            player = FindFirstObjectByType<Player>();
+        }
+
+        // ? --- Hand View ---
+        handView = GetComponent<HandView>();
+
         OnCardChange.AddListener(CalculateTotal);
         OnCardChange.AddListener(UpdateCounter);
 
@@ -51,6 +70,45 @@ public class Hand : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Returns the best blackjack value for the given cards, treating aces as 1 or 11.
+    /// </summary>
+    public static int GetBestValue(Card[] cards)
+    {
+        if (cards == null || cards.Length == 0)
+        {
+            return 0;
+        }
+
+        int total = 0;
+        int aceCount = 0;
+
+        foreach (var card in cards)
+        {
+            if (card == null)
+            {
+                continue;
+            }
+
+
+
+            total += card.GetValue();
+
+            if (card.IsAce())
+            {
+                aceCount++;
+            }
+        }
+
+        while (aceCount > 0 && total + 10 <= 21)
+        {
+            total += 10;
+            aceCount--;
+        }
+
+        return total;
+    }
+
     private void UpdateCounter()
     {
         Debug.Log("Should be uupdating");
@@ -71,12 +129,47 @@ public class Hand : MonoBehaviour
 
     public void AddCard(Face face, Glyph glyph)
     {
-        GameObject cardObject = Instantiate(cardPrefab, cardParent);
+
+        Debug.Log($"Adding Card {face} {glyph}");
+        if (cardPrefab == null)
+        {
+            Debug.LogWarning("Hand.AddCard: cardPrefab is not assigned");
+            return;
+        }
+
+        Transform parent = cardParent != null ? cardParent : this.transform;
+        GameObject cardObject = Instantiate(cardPrefab, parent);
+
+        Debug.Log(cardObject);
 
         Card card = cardObject.GetComponent<Card>();
         card.face = face;
         card.glyph = glyph;
         card.RefreshSelf();
         this.OnCardChange.Invoke();
+        handView.LoadCards();
+    }
+
+    void CardDealtHook(Card card, int handValue)
+    {
+        this.AddCard(card.face, card.glyph);
+    }
+
+
+    // ! === Base Listeners ===
+    void OnEnable()
+    {
+        if (hookToPlayer && player != null)
+        {
+            player.OnCardDealt += CardDealtHook; // Add Hook
+        }
+    }
+
+    void OnDisable()
+    {
+        if (hookToPlayer && player != null)
+        {
+            player.OnCardDealt -= CardDealtHook; // Remove Hook
+        }
     }
 }

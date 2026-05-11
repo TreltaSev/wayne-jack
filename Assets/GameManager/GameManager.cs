@@ -10,6 +10,12 @@ public enum State
     Playing
 }
 
+public enum GameState
+{
+    Idle,
+    Betting
+}
+
 public class GameManager : MonoBehaviour
 {
 
@@ -215,7 +221,7 @@ public class GameManager : MonoBehaviour
     private void HandleHeavy()
     {
         if (!m_heavyAction.WasPressedThisFrame()) return;
-        onLight.Invoke();
+        onHeavy.Invoke();
         if (state == State.Menu) onHeavyMenu.Invoke();
         if (state == State.Dialogue) onHeavyDialogue.Invoke();
         if (state == State.Playing) onHeavyPlaying.Invoke();
