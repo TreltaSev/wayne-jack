@@ -36,6 +36,12 @@ public class Card : MonoBehaviour
     public Image faceSmallImage;
     public Image faceBigImage;
 
+    private Image gameObjectImage;
+
+    public Sprite flippedSprite;
+    public Sprite normalSprite;
+
+
     public bool flipped;
     
     public Face face = Face.Club;
@@ -45,7 +51,9 @@ public class Card : MonoBehaviour
     void Awake()
     {
         cardView = GetComponent<CardView>();
+        gameObjectImage = GetComponent<Image>();
         this.RefreshSelf();
+
     }
 
     void OnValidate()
@@ -70,12 +78,22 @@ public class Card : MonoBehaviour
             glyphImage.sprite = null;
             faceSmallImage.sprite = null;
             faceBigImage.sprite = null;
+            gameObjectImage.sprite = flippedSprite;
+
+            glyphImage.gameObject.SetActive(false);
+            faceSmallImage.gameObject.SetActive(false);
+            faceBigImage.gameObject.SetActive(false);
             return; 
         }
+        
+        glyphImage.gameObject.SetActive(true);
+        faceSmallImage.gameObject.SetActive(true);
+        faceBigImage.gameObject.SetActive(true);
 
         glyphImage.sprite = cardView.GetGlyph(glyph_string);
         faceSmallImage.sprite = cardView.GetFace(face_string);
         faceBigImage.sprite = cardView.GetFace(face_string);
+        gameObjectImage.sprite = normalSprite;
     }
 
     public void Flip()

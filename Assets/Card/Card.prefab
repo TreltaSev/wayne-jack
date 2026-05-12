@@ -254,7 +254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3369735784704507801, guid: 1a68c2f9dda4774b39f1e05bf5ab324c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34ed7d001cfeb506fa86fb940e013277, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -312,6 +312,8 @@ MonoBehaviour:
   glyphImage: {fileID: 354525774734687583}
   faceSmallImage: {fileID: 1083105431821006598}
   faceBigImage: {fileID: 3847833909265488440}
+  flippedSprite: {fileID: -1570679364066427376, guid: 34ed7d001cfeb506fa86fb940e013277, type: 3}
+  normalSprite: {fileID: 3369735784704507801, guid: 1a68c2f9dda4774b39f1e05bf5ab324c, type: 3}
   flipped: 0
   face: 0
   glyph: 11
