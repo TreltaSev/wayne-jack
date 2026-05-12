@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GreenHue
+  m_Name: NoAdjustment
   m_Shader: {fileID: -6465566751694194690, guid: e4c8818260ff5154991f8defcc2fda50, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -50,7 +50,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _ColorMask: 15
-    - _Hue: -238.3
+    - _Hue: 0
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
