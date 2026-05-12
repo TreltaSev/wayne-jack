@@ -940,6 +940,7 @@ GameObject:
   - component: {fileID: 967566944}
   - component: {fileID: 967566943}
   - component: {fileID: 967566942}
+  - component: {fileID: 967566947}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -1013,8 +1014,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1854993386}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_MethodName: Quit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1101,6 +1102,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967566940}
   m_CullTransparentMesh: 1
+--- !u!114 &967566947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967566940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eee86d61baa56941aa5321d2631b448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WobblyImage
+  duration: 3
+  magnitude: 25
 --- !u!1 &1051211178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8351188200885421184, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
@@ -1305,7 +1320,6 @@ GameObject:
   - component: {fileID: 1156198078}
   - component: {fileID: 1156198081}
   - component: {fileID: 1156198080}
-  - component: {fileID: 1156198079}
   - component: {fileID: 1156198082}
   m_Layer: 5
   m_Name: NameText
@@ -1334,18 +1348,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1156198079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1156198077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f886cb54200a0175d8e2259f9cf854f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TextLink
 --- !u!114 &1156198080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1798,6 +1800,7 @@ GameObject:
   - component: {fileID: 1864192008}
   - component: {fileID: 1864192010}
   - component: {fileID: 1864192009}
+  - component: {fileID: 1864192011}
   m_Layer: 0
   m_Name: TitleScreenImage
   m_TagString: Untagged
@@ -1862,6 +1865,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864192006}
   m_CullTransparentMesh: 1
+--- !u!114 &1864192011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864192006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eee86d61baa56941aa5321d2631b448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WobblyImage
+  duration: 3
+  magnitude: 10
 --- !u!1 &1914342772 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9105847905317735930, guid: 901f973900f1bc5f4a0ad5704343fcf9, type: 3}
@@ -1896,6 +1913,7 @@ GameObject:
   - component: {fileID: 1962609231}
   - component: {fileID: 1962609230}
   - component: {fileID: 1962609234}
+  - component: {fileID: 1962609235}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -2057,6 +2075,20 @@ MonoBehaviour:
           m_StringArgument: Level_1_Dialog
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1962609235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962609228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eee86d61baa56941aa5321d2631b448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WobblyImage
+  duration: 3
+  magnitude: 30
 --- !u!1 &2006982983
 GameObject:
   m_ObjectHideFlags: 0
