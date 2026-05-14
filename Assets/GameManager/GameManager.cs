@@ -29,6 +29,12 @@ public class GameManager : MonoBehaviour
         LoadInputs();
     }
 
+    void Start()
+    {
+        // Set Resolution
+        Screen.SetResolution(1920, 1080, false);
+    }
+
     /// <summary>
     /// Force only one instance
     /// </summary>

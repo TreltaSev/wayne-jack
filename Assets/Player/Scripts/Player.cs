@@ -132,7 +132,10 @@ public class Player : MonoBehaviour
         Debug.Log($"Player drew: {card.face} {card.glyph} (hand value: {handValue})");
         OnCardDealt?.Invoke(card, handValue);
 
-        cardCounter.UpdateText(handValue.ToString());
+        if (cardCounter)
+        {
+            cardCounter.UpdateText(handValue.ToString());
+        }
 
         cardGenerator.Create(card.face, card.glyph);
 

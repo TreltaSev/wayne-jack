@@ -30,8 +30,6 @@ namespace Game
         // ? --- Bet --- //
         private int pendingBet;
 
-
-
         // ! === Dynamic Properties === //
 
         // ? --- Selection Logic --- //

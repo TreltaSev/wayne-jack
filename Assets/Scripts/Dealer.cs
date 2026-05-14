@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,6 +14,9 @@ namespace Game
 
         public CardGenerator cardGenerator;
         public CardCounter cardCounter;
+
+        [Header("Turn Timing")]
+        [SerializeField] private float dealDelaySeconds = 0.5f;
 
         // ! === Cards === //
         public Card[] dealerCards = Array.Empty<Card>();
@@ -35,7 +39,9 @@ namespace Game
             Array.Resize(ref dealerCards, dealerCards.Length + 1);
             dealerCards[dealerCards.Length - 1] = randomCard;
 
-            cardCounter.UpdateText(Hand.GetBestValue(dealerCards).ToString());
+            if (cardCounter) {
+                cardCounter.UpdateText(Hand.GetBestValue(dealerCards).ToString());
+            }
 
             OnCardDealt.Invoke(randomCard);
 
@@ -44,25 +50,70 @@ namespace Game
         }
 
         /// <summary>
-        /// Runs dealer logic to hit until 17 or more, then bust or stand.
+        /// Runs dealer logic to flip index 1, then hit until 17 or more.
         /// </summary>
-        public void PlayDealerTurn()
+        public IEnumerator PlayDealerTurn()
         {
+            FlipCardAtIndex(1);
+
+            if (dealDelaySeconds > 0f)
+            {
+                yield return new WaitForSeconds(dealDelaySeconds);
+            }
+
             while (GetHandValue() < 17)
             {
                 DealCard();
+
+                if (dealDelaySeconds > 0f)
+                {
+                    yield return new WaitForSeconds(dealDelaySeconds);
+                }
             }
+
             int handValue = GetHandValue();
 
             if (handValue > 21)
             {
                 Debug.Log($"Dealer busts with {handValue}");
-                OnDealerBust?.Invoke(handValue);
-                return;
+                OnDealerBust.Invoke(handValue);
+                yield break;
             }
 
             Debug.Log($"Dealer stands with {handValue}");
-            OnDealerStand?.Invoke(handValue);
+            OnDealerStand.Invoke(handValue);
+        }
+
+        private void FlipCardAtIndex(int cardIndex)
+        {
+            if (cardIndex < 0 || cardIndex >= dealerCards.Length || dealerCards[cardIndex] == null)
+            {
+                return;
+            }
+
+            if (dealerCards[cardIndex].flipped)
+            {
+                dealerCards[cardIndex].Flip();
+            }
+
+            if (cardGenerator == null || cardGenerator.targetParent == null)
+            {
+                return;
+            }
+
+            if (cardIndex < cardGenerator.targetParent.childCount)
+            {
+                Transform visualCardTransform = cardGenerator.targetParent.GetChild(cardIndex);
+                Card visualCard = visualCardTransform.GetComponent<Card>();
+                if (visualCard != null && visualCard.flipped)
+                {
+                    visualCard.Flip();
+                }
+            }
+
+            if (cardCounter) {
+                cardCounter.UpdateText(Hand.GetBestValue(dealerCards).ToString());
+            }
         }
 
         /// <summary>

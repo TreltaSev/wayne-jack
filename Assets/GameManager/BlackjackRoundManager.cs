@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public class BlackjackRoundManager : MonoBehaviour
 {
@@ -146,7 +147,6 @@ public class BlackjackRoundManager : MonoBehaviour
     public void Hit()
     {
         if (!roundInProgress || !playerTurnActive) return;
-        player.DealCard();
     }
 
     /// <summary>
@@ -159,7 +159,16 @@ public class BlackjackRoundManager : MonoBehaviour
         player.Stand();
         playerTurnActive = false;
 
-        dealer.PlayDealerTurn();
+        StartCoroutine(ResolveDealerTurnAndEndRound());
+    }
+
+    private IEnumerator ResolveDealerTurnAndEndRound()
+    {
+        if (dealer != null)
+        {
+            yield return StartCoroutine(dealer.PlayDealerTurn());
+        }
+
         EndRound();
     }
 
@@ -228,10 +237,10 @@ public class BlackjackRoundManager : MonoBehaviour
         roundInProgress = false;
         playerTurnActive = false;
         hasConfirmedBet = false;
-        OnRoundEnded.Invoke();
 
         // Clear the current hands so the next bet starts fresh.
-        ResetRound();
+        Invoke(nameof(ResetRound), 2f);
+        Invoke(nameof(OnRoundEnded.Invoke), 2f);
 
         Debug.Log($"Round ended. Player: {playerValue} Dealer: {dealerValue}");
     }
